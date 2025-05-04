@@ -1,12 +1,41 @@
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useNavigate,
+} from "react-router-dom";
+
 import { useState } from "react";
 import { useLaunchGame } from "./games.jsx";
 import { Card, Row, Col, Spin, Typography, Drawer } from "antd";
 import { MenuOutlined } from "@ant-design/icons";
+import FunOMeter from "./games/FunOMeter/FunOMeter.jsx";
+import Darts from "./games/Darts/Darts.jsx";
+import PigGame from "./games/PigGame/PigGame.jsx";
+import RPS from "./games/RPS/RPS.jsx";
+
 import "./App.css";
 
 const { Title, Paragraph } = Typography;
 
 function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/fun" element={<FunOMeter />} />
+        <Route path="/game_darts" element={<Darts />} />
+        <Route path="/pig_game" element={<PigGame />} />
+        <Route path="/game_rps" element={<RPS />} />
+        {/* <Route path="/game_namer" element={<Namer />} />
+        <Route path="/game_dice" element={<Dice />} /> */}
+      </Routes>
+    </Router>
+  );
+}
+
+function Home() {
+  const navigate = useNavigate();
   const { games, loading } = useLaunchGame();
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -23,6 +52,7 @@ function App() {
         padding: "20px",
         backgroundColor: "#f0f2f5",
         minHeight: "100vh",
+        borderRadius: "12px",
       }}
     >
       <Title
@@ -47,7 +77,7 @@ function App() {
               <Card
                 className="game-card"
                 hoverable
-                onClick={() => showDrawer(game)}
+                onClick={() => navigate(`/${game.gameType}`)}
                 style={{
                   height: "100%",
                   display: "flex",
