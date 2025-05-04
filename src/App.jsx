@@ -13,6 +13,8 @@ import FunOMeter from "./games/FunOMeter/FunOMeter.jsx";
 import Darts from "./games/Darts/Darts.jsx";
 import PigGame from "./games/PigGame/PigGame.jsx";
 import RPS from "./games/RPS/RPS.jsx";
+import Namer from "./games/Namer/Namer.jsx";
+import Dice from "./games/Dice/Dice.jsx";
 
 import "./App.css";
 
@@ -27,8 +29,8 @@ function App() {
         <Route path="/game_darts" element={<Darts />} />
         <Route path="/pig_game" element={<PigGame />} />
         <Route path="/game_rps" element={<RPS />} />
-        {/* <Route path="/game_namer" element={<Namer />} />
-        <Route path="/game_dice" element={<Dice />} /> */}
+        <Route path="/game_namer" element={<Namer />} />
+        <Route path="/game_dice" element={<Dice />} />
       </Routes>
     </Router>
   );
