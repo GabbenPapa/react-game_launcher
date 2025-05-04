@@ -11,7 +11,7 @@ export function useLaunchGame() {
           "https://game-launcher-1915c-default-rtdb.europe-west1.firebasedatabase.app/games.json"
         );
         const data = await response.json();
-        const gameList = Object.values(data); // ha object kulcsokkal jön
+        const gameList = Object.values(data);
         setGames(gameList);
       } catch (error) {
         console.error("Error fetching games:", error);

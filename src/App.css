@@ -1,0 +1,7 @@
+.game-card {
+  background: linear-gradient(135deg, #4b0080, #8400ff);
+  color: white;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+}
