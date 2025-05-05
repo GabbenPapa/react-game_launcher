@@ -106,7 +106,7 @@ function Home() {
                   {game.title}
                 </Title>
                 <Paragraph style={{ color: "white" }}>
-                  <strong>Description:</strong> {game.description}
+                  <strong></strong> {game.description}
                 </Paragraph>
               </Card>
             </Col>
@@ -145,7 +145,12 @@ function Home() {
             <Paragraph>
               <strong>Long Description:</strong> {selectedGame.longDescription}
             </Paragraph>
-            <button className="drawer-button">Start</button>
+            <button
+              className="drawer-button"
+              onClick={() => navigate(`/${selectedGame.gameType}`)}
+            >
+              Start
+            </button>
           </>
         )}
       </Drawer>
