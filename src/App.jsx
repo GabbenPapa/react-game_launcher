@@ -71,7 +71,14 @@ function Home() {
       </Title>
 
       {loading ? (
-        <Spin size="large" />
+        <div
+          style={{
+            textValign: "center",
+            textAlign: "center",
+          }}
+        >
+          <Spin size="large" />
+        </div>
       ) : (
         <Row gutter={[16, 16]}>
           {games.map((game, index) => (

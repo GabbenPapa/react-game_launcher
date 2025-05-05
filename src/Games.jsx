@@ -7,6 +7,7 @@ export function useLaunchGame() {
   useEffect(() => {
     async function fetchGames() {
       try {
+        setLoading(true);
         const response = await fetch(
           "https://game-launcher-1915c-default-rtdb.europe-west1.firebasedatabase.app/games.json"
         );

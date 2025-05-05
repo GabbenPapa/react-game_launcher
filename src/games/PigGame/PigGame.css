@@ -101,7 +101,8 @@ body {
 }
 
 /* DICE */
-.pig-game .dice {
+
+.dice-img {
   position: absolute;
   top: 50%;
   left: 50%;
