@@ -21,7 +21,6 @@ export default function RPS() {
   function handleHold() {
     const holded = Math.trunc(Math.random() * 3) + 1;
     setHolded(holded);
-    console.log(holded);
   }
 
   return (
@@ -46,15 +45,20 @@ export default function RPS() {
           </div>
         </div>
         {holded && (
-          <div className="computer-move">
-            <img
-              src={rpsImages[holded]}
-              alt={rpsNames[holded]}
-              className="rps-img"
-            />
-            <p className="player-text">{rpsNames[holded]}</p>
+          <div className="rps-footer">
+            <h2 className="rps-subtitle">Computer move</h2>
+            <div className="player">
+              <div className="player-move">
+                <img
+                  src={rpsImages[holded]}
+                  alt={rpsNames[holded]}
+                  className="player-img"
+                />
+                <p className="player-text">{rpsNames[holded]}</p>
+              </div>
+            </div>
           </div>
-        )}{" "}
+        )}
       </main>
     </div>
   );

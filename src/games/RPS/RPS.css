@@ -51,6 +51,16 @@ body {
   gap: 0.5rem;
 }
 
+.rps-footer {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
 .rps-title {
   font-size: 3rem;
   font-weight: 700;
@@ -86,29 +96,6 @@ body {
   transform: scale(1.05);
 }
 
-.rps .player-img {
-  width: 80px;
-  height: auto;
-  border-radius: 0.5rem;
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
-}
-
-.rps .player-text {
-  margin-top: 0.5rem;
-  font-size: 1rem;
-  color: #fff;
-}
-
-/* rps Image */
-.rps .player-img {
-  height: 6rem;
-  width: auto;
-  border-radius: 10px;
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s;
-  cursor: pointer;
-}
-
 .rps .player-text {
   margin-top: 0.5rem;
   color: #fff;
@@ -116,64 +103,13 @@ body {
   text-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.3);
 }
 
-/* BUTTONS */
-.rps .controls {
-  position: absolute;
-  left: 50%;
-  bottom: 2rem;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-}
-
-.rps .btn {
-  color: #444;
-  background: none;
-  border: none;
-  font-family: inherit;
-  font-size: 1.4rem;
-  text-transform: uppercase;
-  cursor: pointer;
-  font-weight: 400;
-  background-color: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(10px);
-  padding: 0.6rem 2rem;
-  border-radius: 50rem;
-  box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
-  transition: all 0.2s;
-}
-
-.rps .btn:active {
-  transform: translateY(3px);
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
-}
-
-.rps-img {
-  position: absolute;
-  top: 80%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  height: 8rem;
-  max-width: 90%;
-  border-radius: 10px;
-  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
-}
-
-.rps .computer-move {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 2rem;
-  gap: 0.5rem;
-}
-
-.rps .rps-img {
-  width: 100px;
+.rps .player-img {
+  width: 6rem;
   height: auto;
   border-radius: 0.5rem;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+  cursor: pointer;
 }
 
 @media (max-width: 768px) {
