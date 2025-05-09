@@ -92,6 +92,13 @@ body {
   transition: transform 0.2s ease;
 }
 
+.rps .computer-move {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: not-allowed;
+}
+
 .rps .player-move:hover {
   transform: scale(1.05);
 }
@@ -112,6 +119,14 @@ body {
   cursor: pointer;
 }
 
+.rps-winner {
+  text-align: center;
+  margin: 2rem auto;
+  font-size: 2rem;
+  color: #fff;
+  text-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
+}
+
 @media (max-width: 768px) {
   .rps main {
     flex-direction: column;
@@ -125,16 +140,5 @@ body {
     transform: none;
     margin: 1rem auto;
     height: 6rem;
-  }
-
-  .rps .controls {
-    position: static;
-    transform: none;
-    margin: 2rem auto 0;
-  }
-
-  .rps .btn {
-    width: 90%;
-    text-align: center;
   }
 }
