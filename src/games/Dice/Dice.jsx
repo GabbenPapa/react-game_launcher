@@ -29,8 +29,8 @@ const Dice = () => {
   return (
     <div className="dice">
       <main>
-        <h1 className="dice-title"> Dice Game</h1>
-        <div className="controls controls-top">
+        <h1 className="dice-title">Dice Game</h1>
+        <div className="controls">
           <button onClick={handleRoll} className="btn btn-roll">
             🔄 Roll the dice
           </button>
