@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./rps.css";
 import paperImg from "../../assets/paper.png";
 import rockImg from "../../assets/rock.png";
 import scissorsImg from "../../assets/scissors.png";
+import { useLocation } from "react-router-dom";
 
 const rpsOptions = [
   { id: 1, name: "Paper", img: paperImg },
@@ -13,6 +14,9 @@ const rpsOptions = [
 export default function RPS() {
   const [computerMove, setComputerMove] = useState(null);
   const [winner, setWinner] = useState("");
+
+  const location = useLocation();
+  const title = location.state?.title || "Rock Paper Scissors";
 
   const getWinner = (playerId, compId) => {
     if (playerId === compId) return "It's a tie!";
@@ -26,6 +30,14 @@ export default function RPS() {
     }
     return "Computer wins!";
   };
+
+  useEffect(
+    function () {
+      if (!title) return;
+      document.title = ` ${title}`;
+    },
+    [title]
+  );
 
   const handleClick = (playerId) => {
     const compId = Math.ceil(Math.random() * 3);

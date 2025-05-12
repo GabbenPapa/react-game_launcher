@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import diceImages from "../../Components";
+import { useLocation } from "react-router-dom";
+
 import "./PigGame.css";
 
 const PigGame = () => {
@@ -8,6 +10,17 @@ const PigGame = () => {
   const [activePlayer, setActivePlayer] = useState(0);
   const [playing, setPlaying] = useState(true);
   const [dice, setDice] = useState(null);
+
+  const location = useLocation();
+  const title = location.state?.title || "Pig Game";
+
+  useEffect(
+    function () {
+      if (!title) return;
+      document.title = ` ${title}`;
+    },
+    [title, location]
+  );
 
   const init = () => {
     setScores([0, 0]);

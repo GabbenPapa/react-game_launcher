@@ -86,7 +86,11 @@ function Home() {
               <Card
                 className="game-card"
                 hoverable
-                onClick={() => navigate(`/${game.gameType}`)}
+                onClick={() =>
+                  navigate(`/${game.gameType}`, {
+                    state: { title: game.title },
+                  })
+                }
                 style={{
                   height: "100%",
                   display: "flex",

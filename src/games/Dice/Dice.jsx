@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import diceImages from "../../Components";
 import "./Dice.css";
-
-//ToDo: it should come from dinamic data
-const title = "Dice Game";
+import { useLocation } from "react-router-dom";
 
 const Dice = () => {
   const [dice, setDice] = useState(null);
+
+  const location = useLocation();
+  const title = location.state?.title || "Dice Game";
 
   const handleRoll = () => {
     const rolled = Math.trunc(Math.random() * 6) + 1;
@@ -17,14 +18,13 @@ const Dice = () => {
     }
   };
 
-  useEffect(function () {
-    if (!title) return;
-    document.title = ` ${title}`;
-
-    return function () {
-      document.title = "Games";
-    };
-  }, []);
+  useEffect(
+    function () {
+      if (!title) return;
+      document.title = ` ${title}`;
+    },
+    [title]
+  );
 
   return (
     <div className="dice">
